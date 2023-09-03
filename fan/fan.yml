@@ -1,0 +1,35 @@
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Sahil#99
+      MYSQL_DATABASE: newdb
+    ports:
+      - 3306
+    volumes:
+      - /home/ec2-user/fanstorage:/var/lib/mysql
+    networks:
+      - backend
+
+  web:
+    image: php:7.4-apache
+    depends_on:
+      - db
+    ports:
+      - 80:80
+    volumes:
+      - /home/ec2-user/bye:/var/www/html
+    networks:
+      - frontend
+
+  app:
+    image: php:7.4-fpm
+    depends_on:
+      - db
+    networks:
+      - frontend
+      - backend
+
+networks:
+  frontend:
+  backend:
