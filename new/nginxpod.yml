@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: satendra
+  labels:
+    match: cricket
+spec:
+  containers:
+    - image: nginx
+      name: mysattu
+      ports:
+        - containerPort: 80
+          hostPort: 80

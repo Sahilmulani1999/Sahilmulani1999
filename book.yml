@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mynewhttpdpod
+  labels:
+    bhai: saif
+spec:
+  containers:
+    - image: httpd
+      name: myhttpdcontaner
+      ports:
+        - containerPort: 80

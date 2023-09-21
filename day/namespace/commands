@@ -1,0 +1,14 @@
+kubectl create namespace palkesh
+kubectl get ns
+kubectl get namespace
+kubectl apply -f nginxpod.yml -n palkesh
+kubectl get pods -n palkesh
+kubectl describe namespace palkesh
+kubectl describe ns palkesh
+kubectl apply -f namespace.yml
+kubectl apply -f createpodinnamespace.yml
+kubectl get pods -n palkesh
+kubectl delete pods mynggggpod nginxpod -n palkesh
+kubectl config set-context --current --namespace=palkesh
+kubectl config set-context --current --namespace=default
+kubectl delete ns palkesh

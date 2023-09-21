@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mharonginx
+  namespace: sahilnamespace
+  labels:
+    mobile: insta
+spec:
+  conatiners:
+    - image: nginx
+      name: myngiiiiiiicontainer
+      ports:
+        - containerPort: 80 

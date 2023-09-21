@@ -1,0 +1,8 @@
+kubectl apply -f ReplicationController.yml
+kubectl get rc
+kubectl apply -f ReplicationController1.yml
+kubectl get rc
+kubectl get pods
+kubectl get pods --show-labels
+kubectl get pods -o wide
+kubectl delete rc rcontrol

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mynggggpod
+  namespace: palkesh
+spec:
+  containers:
+    - image: nginx
+      name: nginxcontainers
+      ports:
+        - containerPort: 80

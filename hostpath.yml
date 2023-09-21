@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpathpod
+spec:
+  containers:
+    - image: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP
+      name: ngcontainer
+      volumeMounts:
+        - name: htmlfolder
+          mountPath: /usr/share/nginx/html
+  volumes:
+     - name: htmlfolder
+       hostPath:
+         path: /home/ec2-user/mydata
+         type: Directory

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploymentpod
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - dev
+          - env
+  template:
+       metadata:
+         labels:
+           app: dev
+       spec:
+        containers:
+        - image: nginx
+          name: ngcontainer
+          ports:
+            - containerPort: 80

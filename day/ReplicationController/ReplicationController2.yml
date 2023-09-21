@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myreplicacontroller
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        niece: amayra
+    spec:
+      containers:
+        - image: nginx
+          name: teranginx
+          ports:
+            - containerPort: 80

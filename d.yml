@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrspod
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - dev
+          - live
+  template:
+    metadata:
+      labels:
+        app: dev
+    spec:
+      containers:
+        - image: nginx
+          name: ngcontainer
+          ports:
+            - containerPort: 80
+
